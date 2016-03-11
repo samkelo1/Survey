@@ -9,6 +9,6 @@ if($_POST['submit'])
 {
 echo "****Thank you****";
 mysql_query($sql);
-
+//this is killing my brain
 }
 ?>
