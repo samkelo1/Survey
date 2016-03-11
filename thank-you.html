@@ -1,0 +1,388 @@
+
+<style>
+	.input_hidden {
+		position: absolute;
+		left: -9999px;
+	}
+
+	.selected {
+		background-color: #DE007B;
+	}
+
+	#sites label {
+		display: inline-block;
+		cursor: pointer;
+	}
+
+
+	#sites label:hover {
+		background-color: #DE007B;
+	}
+
+	#sites label img {
+		padding: 3px;
+
+	}
+
+	a hover{
+		background-color:black;
+
+
+	}
+	button{
+		color:#DE007B;
+	}
+
+
+
+
+</style>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script-->
+	<!-- Include the jQuery Mobile library -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<script type ="text/javascript">
+			jQuery(document).ready(function(){
+				$('.sites input:radio').addClass('input_hidden');
+				$('#sites label').click(function() {
+					$(this).addClass('selected').siblings().removeClass('selected');
+				});
+
+			});
+
+
+</script>
+<div class="main" align="center">
+	<div class="col-main">
+		<br/>
+		<div><img src="http://uat.game.co.za/skin/frontend/game/default/images/gamelogo.png" alt="Game" class="large"><br/></div>
+		<div id="messages_contactus"><br/>How are we doing ? <br/>Please help us improve our service by completing the simple survey below:</div>
+		<div class="headerinfo">&nbsp;</div>
+		<form id="surveyForm" action="insert.php" method="post" data-transition ="flip”>
+         <div class="fieldset">
+
+
+		<!--div class="contactus-select">
+           <p>
+              <select id="closest_store" class="contactus-select required-entry" name="closest_store">
+                 <option selected="selected" value="" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- Please select your store--</option>
+                 <option value="">Eastern Cape</option>
+                 <option value="1">&nbsp; - East London: Vincent</option>
+                 <option value="2">&nbsp; - East London: Beacon Bay </option>
+                 <option value="3">&nbsp; - George: Garden Route</option>
+                 <option value="4">&nbsp; - Jefferys Bay</option>
+                 <option value="5">&nbsp; - King Williams Town</option>
+                 <option value="6">&nbsp; - Knysna </option>
+                 <option value="7">&nbsp; - Kokstad</option>
+                 <option value="8">&nbsp; - Mossel Bay</option>
+                 <option value="9">&nbsp; - Mthatha</option>
+                 <option value="10">&nbsp; - Mthatha-Umtata Circus Triangle </option>
+                 <option value="11">&nbsp; - Port Elizabeth: Green Acres</option>
+                 <option value="12">&nbsp; - Port Elizabeth: Walmer Park</option>
+                 <option value="13">&nbsp; - Queenstown</option>
+                 <option value="">Free State</option>
+                 <option value="14">&nbsp; - Bethlehem</option>
+                 <option value="15">&nbsp; - Bloemfontein: Fleurdal</option>
+                 <option value="16">&nbsp; - Bloemfontein: Mimosa Mall</option>
+                 <option value="17">&nbsp; - Kathu</option>
+                 <option value="18">&nbsp; - Kimberly-Kimberley</option>
+                 <option value="19">&nbsp; - Phuthaditjhaba</option>
+                 <option value="20">&nbsp; - Upington </option>
+                 <option value="21">&nbsp; - Vryburg</option>
+                 <option value="22">&nbsp; - Welkom</option>
+                 <option value="">Gauteng</option>
+                 <option value="23">&nbsp; - Alberton-The Glen</option>
+                 <option value="24">&nbsp; - Alberton - Test</option>
+                 <option value="25">&nbsp; - Benoni </option>
+                 <option value="26">&nbsp; - Boksburg </option>
+                 <option value="27">&nbsp; - Brakpan-Carnival Mall</option>
+                 <option value="28">&nbsp; - Brits</option>
+                 <option value="29">&nbsp; - Brooklyn</option>
+                 <option value="30">&nbsp; - Centurion </option>
+                 <option value="31">&nbsp; - Cresta </option>
+                 <option value="32">&nbsp; - Eastgate</option>
+                 <option value="33">&nbsp; - Evaton</option>
+                 <option value="34">&nbsp; - Gourways-Fourways</option>
+                 <option value="35">&nbsp; - Greenstone Hill-Greenstone Mall</option>
+                 <option value="36">&nbsp; - Hammanskraal </option>
+                 <option value="37">&nbsp; - Heidelberg</option>
+                 <option value="38">&nbsp; - Johannesburg City </option>
+                 <option value="39">&nbsp; - Karenpark-Wonderpark</option>
+                 <option value="40">&nbsp; - Kempton Park-Festival Mall</option>
+                 <option value="41">&nbsp; - Krugersdorp-Cradlestone</option>
+                 <option value="42">&nbsp; - Krugersdorp-Key West</option>
+                 <option value="43">&nbsp; - Game Trade Route Mall Lenasia</option>
+                 <option value="44">&nbsp; - Menlo Park-Menlyn</option>
+                 <option value="45">&nbsp; - Midrand</option>
+                 <option value="46">&nbsp; - Montana Park-Kolonnade</option>
+                 <option value="47">&nbsp; - Northriding-Bel Air</option>
+                 <option value="48">&nbsp; - Pretoria</option>
+                 <option value="49">&nbsp; - Pretoria-Woodlands Boulevard</option>
+                 <option value="50">&nbsp; - Rooderport-Westgate</option>
+                 <option value="51">&nbsp; - Rooderport-Clearwater</option>
+                 <option value="52">&nbsp; - SQS - Rosebank</option>
+                 <option value="53">&nbsp; - Sandton</option>
+                 <option value="54">&nbsp; - Soshanguve</option>
+                 <option value="55">&nbsp; - Southgate</option>
+                 <option value="56">&nbsp; - Soweto</option>
+                 <option value="57">&nbsp; - Vanderbijlpark-Vaal Mall</option>
+                 <option value="58">&nbsp; - Vereeniging</option>
+                 <option value="59">&nbsp; - Vosloorus</option>
+                 <option value="60">&nbsp; - Weirda Park-Mall at Reds</option>
+                 <option value="">Kwazulu-Natal</option>
+                 <option value="61">&nbsp; - Amanzimtoti - SQS Store</option>
+                 <option value="62">&nbsp; - Ballito</option>
+                 <option value="63">&nbsp; - Durban-West Street</option>
+                 <option value="64">&nbsp; - Durban: City</option>
+                 <option value="65">&nbsp; - Empangeni</option>
+                 <option value="66">&nbsp; - Ladysmith</option>
+                 <option value="67">&nbsp; - Newcastle</option>
+                 <option value="68">&nbsp; - Pietermaritzburg-PMB Liberty Mall</option>
+                 <option value="69">&nbsp; - Pietermaritzburg: CBD</option>
+                 <option value="70">&nbsp; - Pinetown</option>
+                 <option value="71">&nbsp; - Richards Bay</option>
+                 <option value="72">&nbsp; - Shelly Beach</option>
+                 <option value="73">&nbsp; - Ulundi</option>
+                 <option value="74">&nbsp; - Umhlanga-Gateway</option>
+                 <option value="75">&nbsp; - Westville-Pavilion </option>
+                 <option value="76">&nbsp; - Westville-Westwood Mall</option>
+                 <option value="">Limpopo</option>
+                 <option value="77">&nbsp; - Bela Bela </option>
+                 <option value="78">&nbsp; - Burgersfort</option>
+                 <option value="79">&nbsp; - Groblersdal</option>
+                 <option value="80">&nbsp; - Lebowakgomo</option>
+                 <option value="81">&nbsp; - Lephalale</option>
+                 <option value="82">&nbsp; - Makhado</option>
+                 <option value="83">&nbsp; - Mokopane </option>
+                 <option value="84">&nbsp; - Northam</option>
+                 <option value="85">&nbsp; - Polokwane - Mall of the North</option>
+                 <option value="86">&nbsp; - Polokwane </option>
+                 <option value="87">&nbsp; - Thohoyandou</option>
+                 <option value="88">&nbsp; - Tzaneen </option>
+                 <option value="">Mpumalanga</option>
+                 <option value="89">&nbsp; - Ermelo</option>
+                 <option value="90">&nbsp; - Middleburg-Middelburg</option>
+                 <option value="91">&nbsp; - Nelspruit: Ilanga</option>
+                 <option value="92">&nbsp; - Secunda </option>
+                 <option value="93">&nbsp; - Highveld Witbank</option>
+                 <option value="">North West</option>
+                 <option value="94">&nbsp; - Klerksdorp</option>
+                 <option value="95">&nbsp; - Lichtenburg</option>
+                 <option value="96">&nbsp; - Mafikeg-Mafikeng</option>
+                 <option value="97">&nbsp; - Potchefstroom: Mooi River</option>
+                 <option value="98">&nbsp; - Rustenburg: Waterfall Mall</option>
+                 <option value="99">&nbsp; - Rustenburg: CBD</option>
+                 <option value="">Western Cape</option>
+                 <option value="100">&nbsp; - Brakenfell-Cape Gate</option>
+                 <option value="101">&nbsp; - Cape Town-Grand Central</option>
+                 <option value="102">&nbsp; - Credenburg-Vredenburg</option>
+                 <option value="103">&nbsp; - Goodwood-N1 City</option>
+                 <option value="104">&nbsp; - Kenilworth</option>
+                 <option value="105">&nbsp; - Milnerton-Canal Walk</option>
+                 <option value="106">&nbsp; - Mitchells Plain</option>
+                 <option value="107">&nbsp; - Paarl</option>
+                 <option value="108">&nbsp; - Parow Centre</option>
+                 <option value="109">&nbsp; - Somerset West-Somerset Mall</option>
+                 <option value="110">&nbsp; - Stellenbosch</option>
+                 <option value="111">&nbsp; - Table View-Bayside </option>
+                 <option value="112">&nbsp; - Tyger Valley </option>
+                 <option value="113">&nbsp; - Worcester</option>
+                 <option value="114">&nbsp; - Zevenwacht</option>
+              </select-->
+		<script type="text/javascript">
+			function configureDropDownLists(ddl1,ddl2) {
+				/*var provinces = ['Black', 'White', 'Blue'];
+				 var stores = ['Square', 'Circle', 'Triangle'];
+				 var names = ['John', 'David', 'Sarah'];*/
+				var EasternCape =['East London:Vincent','East London: Beacon Bay','George: Garden Route','Jefferys Bay','King Williams Town','Knysna','Kokstad','Mossel Bay','Mthatha Circus Triangle','Port Elizabeth: Green Acres','Port Elizabeth: Walmer Park','Queenstown'];
+				var FreeState =['Bethlehem','Bloemfontein: Fleurdal','Bloemfontein: Mimosa Mall','Kathu','Kimberly','Phuthaditjhaba','Upington','Vryburg','Welkom'];
+				var Gauteng=['Alberton-The Glen','Alberton - Test','Benoni','Boksburg','Brakpan-Carnival Mall','Brits',' Brooklyn','Centurion','Cresta ','Eastgate','Evaton','Gourways-Fourways','Greenstone Hill-Greenstone Mall','Hammanskraal ','Heidelberg','Johannesburg City ','Karenpark-Wonderpark','Kempton Park-Festival Mall','Krugersdorp-Cradlestone','Krugersdorp-Key West','Game Trade Route Mall Lenasia','Menlo Park-Menlyn','Midrand','Montana Park-Kolonnade','Northriding-Bel Air','Pretoria','Pretoria-Woodlands Boulevard','Rooderport-Westgate','Rooderport-Clearwater','Rosebank','Sandton','Soshanguve','Southgate','Soweto','Vanderbijlpark-Vaal Mall','Vereeniging','Vosloorus','Weirda Park-Mall at Reds'];
+				var KwazuluNatal =['Amanzimtoti','Ballito','Durban-West Street','Durban: City','Empangeni','Ladysmith','Newcastle','PMB Liberty Mall','Pietermaritzburg:CBD','Pinetown','Richards Bay','Shelly Beach','Ulundi','Umhlanga-Gateway','Westville-Pavilion','Westwood Mall'];
+				var Limpopo =['Bela Bela','Burgersfort','Groblersdal','Lebowakgomo','Lephalale','Makhado','Mokopane ','Northam','Mall of the North','Polokwane','Thohoyandou','Tzaneen'];
+				var Mpumalanga =['Ermelo','Middleburg-Middelburg','Nelspruit: Ilanga','Secunda ','Highveld Witbank'];
+				var NorthWest =['Klerksdorp','Lichtenburg','Mafikeg-Mafikeng','Potchefstroom: Mooi River','Rustenburg: Waterfall Mall','Rustenburg: CBD'];
+				var WesternCape =['Brakenfell-Cape Gate','Cape Town-Grand Central','Credenburg-Vredenburg','Goodwood-N1 City','Kenilworth','Milnerton-Canal Walk','Mitchells Plain','Paarl','Parow Centre','Somerset West-Somerset Mall','Stellenbosch','Table View-Bayside ','Tyger Valley ','Worcester','Zevenwacht'];
+
+				switch (ddl1.value) {
+					case 'EasternCape':
+						ddl2.options.length = 0;
+						for (i = 0; i < EasternCape.length; i++) {
+							createOption(ddl2, EasternCape[i], EasternCape[i]);
+						}
+						break;
+					case 'FreeState':
+						ddl2.options.length = 0;
+						for (i = 0; i < FreeState.length; i++) {
+							createOption(ddl2, FreeState[i], FreeState[i]);
+						}
+						break;
+					case 'Gauteng':
+						ddl2.options.length = 0;
+						for (i = 0; i < Gauteng.length; i++) {
+							createOption(ddl2, Gauteng[i], Gauteng[i]);
+						}
+						break;
+					case 'KwazuluNatal':
+						ddl2.options.length = 0;
+						for (i = 0; i < KwazuluNatal.length; i++) {
+							createOption(ddl2, KwazuluNatal[i], KwazuluNatal[i]);
+						}
+						break;
+					case 'Limpopo':
+						ddl2.options.length = 0;
+						for (i = 0; i < Limpopo.length; i++) {
+							createOption(ddl2, Limpopo[i], Limpopo[i]);
+						}
+						break;
+					case 'Mpumalanga':
+						ddl2.options.length = 0;
+						for (i = 0; i < Mpumalanga.length; i++) {
+							createOption(ddl2, Mpumalanga[i], Mpumalanga[i]);
+						}
+						break;
+					case 'NorthWest':
+						ddl2.options.length = 0;
+						for (i = 0; i < NorthWest.length; i++) {
+							createOption(ddl2, NorthWest[i], NorthWest[i]);
+						}
+						break;
+					case 'WesternCape':
+						ddl2.options.length = 0;
+						for (i = 0; i < WesternCape.length; i++) {
+							createOption(ddl2, WesternCape[i], WesternCape[i]);
+						}
+						break;
+					default:
+						ddl2.options.length = 0;
+						break;
+				}
+
+			}
+
+			function createOption(ddl, text, value) {
+				var opt = document.createElement('option');
+				opt.value = value;
+				opt.text = text;
+				ddl.options.add(opt);
+			}
+		</script>
+
+		<select id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+			<option value="">Please select your province</option>
+			<!--option value="provinces">provinces</option>
+            <option value="stores">stores</option>
+            <option value="Names">Names</option-->
+			<option value="EasternCape">EasternCape</option>
+			<option value="FreeState">FreeState</option>
+			<option value="Gauteng">Gauteng</option>
+			<option value="KwazuluNatal">Kwazulu-Natal</option>
+			<option value="Limpopo">Limpopo</option>
+			<option value="Mpumalanga">Mpumalanga</option>
+			<option value="NorthWest">North West</option>
+			<option value="WesternCape">Western Cape</option>
+
+		</select>
+		<br/>
+		<select id="ddl2">
+		</select>
+
+		</p>
+		<ol>
+			<p>1.Was our store neat and tidy?</p>
+			<div id="sites1" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>2.&nbsp;Did our product range meet all your needs?</p>
+			<div id="sites2" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>3.&nbsp;Were the products you were looking for in-stock?</p>
+			<div id="sites3" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>4.&nbsp;What do you think about our product quality?</p>
+			<div id="sites4" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>5.&nbsp;Are our prices affordable?</p>
+			<div id="sites5" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>6.&nbsp; Were our staff helpful and friendly?</p>
+			<div id="sites6" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>7.&nbsp;Were our checkout queues efficient?</p>
+			<div id="sites7" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>8.&nbsp;Is our store easy to shop?</p>
+			<div id="sites8" class ="sites">
+				<input type="radio"  name="q8" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="q8" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="q8" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>9.   Did you like our food offering?</p>
+			<!--p><table>
+               <tbody>
+                   <tr>
+                     <td>
+                       <input   type="radio" name="emotion" id="sad" class="input-hidden" />
+                       <label for="sad">
+                        <img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" /></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="emotion"id="netral" class="input-hidden" />
+                        <label for="netral">
+                        <img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" /></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="emotion"id="happy" class="input-hidden" />
+                        <label for="happy">
+                        <img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+                     </td>
+                  </tr>
+               </tbody>
+            </table></p-->
+
+			<div id="sites9" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+			<p>10.How would you rate your overall shopping experience with us? </p>
+
+			<div id="sites10" class ="sites">
+				<input type="radio"  name="site" id="sad" value="stackoverflow" /><label for="sad"><img src="{{media url="wysiwyg/sad.jpg"}}" alt="" width="32" height ="32" alt="Stack Overflow" /></label>
+				<input type="radio" name="site" id="neutral" value="serverfault" /><label for="neutral"><img src="{{media url="wysiwyg/neutral.jpg"}}" alt="" width="32" height="32" alt="Server Fault" /></label>
+				<input type="radio" name="site" id="happy" value="superuser" /><label for="happy"><img src="{{media url="wysiwyg/happy.jpg"}}" alt="" width="32" height="32" /></label>
+			</div>
+	</div>
+
+
+	<div class="buttons-set">
+		<button id="button1" bgcolor="#DE007B" class="button" title="Submit" type="submit">Submit</button>
+	</div>
+</div>
+</form>
+</div>
+</div>
+
+
+
